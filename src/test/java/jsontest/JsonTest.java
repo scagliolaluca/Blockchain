@@ -1,5 +1,9 @@
+package jsontest;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.Sample;
 
 public class JsonTest {
 

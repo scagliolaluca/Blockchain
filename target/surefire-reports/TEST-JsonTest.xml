@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="JsonTest" time="0.079" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="JsonTest" time="0.057" tests="4" errors="0" skipped="0" failures="1">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="DE"/>
     <property name="sun.boot.library.path" value="C:\Users\Luca Scagliola\.jdks\openjdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\Luca Scagliola\AppData\Local\Temp\surefire7598520785382418086\surefirebooter-20231012190517303_3.jar C:\Users\Luca Scagliola\AppData\Local\Temp\surefire7598520785382418086 2023-10-12T19-05-17_212-jvmRun1 surefire-20231012190517303_1tmp surefire_0-20231012190517303_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Luca Scagliola\AppData\Local\Temp\surefire17773089609732035267\surefirebooter-20231012194722799_3.jar C:\Users\Luca Scagliola\AppData\Local\Temp\surefire17773089609732035267 2023-10-12T19-47-22_705-jvmRun1 surefire-20231012194722799_1tmp surefire_0-20231012194722799_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Luca Scagliola\IdeaProjects\Blockchain\target\test-classes;C:\Users\Luca Scagliola\IdeaProjects\Blockchain\target\classes;C:\Users\Luca Scagliola\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\Luca Scagliola\.m2\repository\org\slf4j\slf4j-simple\2.0.7\slf4j-simple-2.0.7.jar;C:\Users\Luca Scagliola\.m2\repository\org\slf4j\slf4j-api\2.0.7\slf4j-api-2.0.7.jar;C:\Users\Luca Scagliola\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\Luca Scagliola\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Luca Scagliola\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\Luca Scagliola\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Luca Scagliola\AppData\Local\Temp\surefire7598520785382418086\surefirebooter-20231012190517303_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Luca Scagliola\AppData\Local\Temp\surefire17773089609732035267\surefirebooter-20231012194722799_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21+35-2513"/>
@@ -59,8 +59,24 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testBadInput" classname="JsonTest" time="0.024"/>
-  <testcase name="test" classname="JsonTest" time="0.031"/>
-  <testcase name="testNullInput" classname="JsonTest" time="0.003"/>
-  <testcase name="testNoNameInput" classname="JsonTest" time="0.001"/>
+  <testcase name="testBadInput" classname="JsonTest" time="0.001"/>
+  <testcase name="test" classname="JsonTest" time="0.05"/>
+  <testcase name="testNullInput" classname="JsonTest" time="0.001"/>
+  <testcase name="testNoNameInput" classname="JsonTest" time="0.001">
+    <failure message="Unexpected exception type thrown, expected: &lt;java.lang.IllegalArgumentException&gt; but was: &lt;java.lang.NullPointerException&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.NullPointerException>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:67)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3111)
+	at JsonTest.testNoNameInput(JsonTest.java:38)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.lang.NullPointerException: Cannot invoke "com.google.gson.JsonElement.getAsString()" because the return value of "com.google.gson.JsonObject.get(String)" is null
+	at Sample.getNameFromJson(Sample.java:42)
+	at JsonTest.lambda$testNoNameInput$1(JsonTest.java:39)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	... 6 more
+]]></failure>
+  </testcase>
 </testsuite>
