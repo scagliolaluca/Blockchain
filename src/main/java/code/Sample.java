@@ -1,4 +1,4 @@
-package java;
+package code;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
