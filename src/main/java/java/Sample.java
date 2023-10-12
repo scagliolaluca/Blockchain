@@ -37,9 +37,9 @@ public class Sample {
 
         JsonObject object = element.getAsJsonObject();
 
-        //if (object.get("name") == null) {
-        //    throw new IllegalArgumentException("input must have key \"name\"");
-        //}
+        if (object.get("name") == null) {
+            throw new IllegalArgumentException("input must have key \"name\"");
+        }
 
         return object.get("name").getAsString();
     }
